@@ -15,9 +15,23 @@ $db=new PDO($dsn,$user,$pass);
    	$iid=$_SESSION['what'];
       $sql="SELECT * from course where department_id=$iid";
       $result=$db->query($sql);
-echo '<table <width="70%" border="1" highet="30%">
+echo '
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title> choose department </title>
+         <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet"  href="css/normlization.css">
+        <meta charset="UTF-8">
+         
+    </head>
+    <body>
+<table <width="70%" border="1" highet="30%">
 <tr>
-<th> name </th>
+<th> Course Name </th>
 
 
 </tr>
@@ -31,7 +45,9 @@ foreach ($result as $row) {
 
       }
 
-echo '</table>';
+echo '</table>
+ </body>
+</html>';
 		 
     
 }

@@ -1,8 +1,10 @@
 
 <?php
       session_start();
-      if($_SESSION['flag']=="1")
-      echo "welcome  ".$_SESSION['username']; 
+
+      if($_SESSION['flag']=="1"){
+      echo " welcome  ".$_SESSION['username']; 
+    }
       elseif ($_SESSION['flag']=="2") {
           # code...
          echo "welcome  ".$_SESSION['username1']; 
@@ -15,25 +17,45 @@ $db=new PDO($dsn,$user,$pass);
    try{
       $sql="SELECT * from department";
       $result=$db->query($sql);
-echo '<table <width="70%" border="1" highet="30%">
+echo '
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title> choose department </title>
+         <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet"  href="css/normlization.css">
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+<table <width="70%" border="1" highet="30%">
 <tr>
-<th> name </th>
-<th> id </th>
+<th > Name of Department</th>
+<th> ID of Department </th>
 
 </tr>
 
  ';
 foreach ($result as $row) {
 
-  echo '<tr> 
+  echo '
+  
+  <tr> 
   <td>'.$row['name'].'</td>
   <td>'.$row['dept_id'].'</td>
 
-  </tr>';
+  </tr>
+';
 
       }
 
-echo '</table>';
+echo '</table>
+
+     </body>
+</html>';
      
     
 }
@@ -91,22 +113,24 @@ $db=new PDO($dsn,$user,$pass);
     <head>
 
         <title> choose department </title>
-
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet"  href="css/normlization.css">
         <meta charset="UTF-8">
 
     </head>
 
     <body>
-
+      <label> Enter ID of Department</label>
+ <div class="hi">
         <form action="" method="post">
 
-          <label> choose department </label>
-  <input id="uN"type="number" name="new"><br><br>
+          
+  <input id="uN" type="number" min="1" max="5" name="new"><br><br>
 
             <input type="submit" name="update" >
 
         </form>
-
+</div>
     </body>
 
 
