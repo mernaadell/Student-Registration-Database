@@ -71,7 +71,7 @@ catch(PDOException $e)
 	
 
  <div class="login">
- 	<img src="avatar.png" class="avatar">
+ 	<img src="images.png" class="avatar">
  	<h1>SignUp Here</h1>
  	<form onsubmit="return validate()" name="Register" action="" method="post" >
 	<label> Username </label>

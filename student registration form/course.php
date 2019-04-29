@@ -13,6 +13,12 @@ $db=new PDO($dsn,$user,$pass);
  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    try{
    	$iid=$_SESSION['what'];
+     if($_SESSION['flag']=="2"){
+      $iid=$_SESSION['what'];
+    }
+    elseif($_SESSION['flag']=="1"){
+      $iid=$_SESSION['what'];
+    }
       $sql="SELECT * from course where department_id=$iid";
       $result=$db->query($sql);
 echo '
